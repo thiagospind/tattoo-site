@@ -15,7 +15,7 @@ class ControladorSolicitaOrcamento extends Controller
     public function index()
     {
         $orcamento = SolicitaOrcamento::all()
-            ->sortBy('created_at','desc');
+            ->sortByDesc('created_at');
         return view('visualizaOrcamento',compact('orcamento'));
     }
 

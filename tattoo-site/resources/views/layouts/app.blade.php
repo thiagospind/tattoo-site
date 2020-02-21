@@ -25,5 +25,8 @@
 <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/site.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/popper.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/jquery.mask.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/mask.js') }}" type="text/javascript"></script>
+
 </body>
 </html>

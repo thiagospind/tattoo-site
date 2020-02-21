@@ -17,7 +17,31 @@ body{
     /*color: rgba(34,66,179,0.9);*/
 }
 
+.card-visualiza-orcamento{
+    /*background: rgba(255, 218, 115, 0.9) !important;*/
+    /*background: rgba(206, 222, 228, 0.9) !important;*/
+    background: white;
+    color: black;
+    /*color: rgba(34,66,179,0.9);*/
+}
+
 .text-muted {
     color: white !important;
 }
 
+.label-visualiza-orcamento {
+    /*margin-left: 1rem;*/
+    /*margin-top: 1rem;*/
+    /*margin-right: 1rem;*/
+    /*margin-bottom: 1rem;*/
+
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}
+
+.imagem-exemplo{
+    max-width: 50%;
+    height: auto;
+}

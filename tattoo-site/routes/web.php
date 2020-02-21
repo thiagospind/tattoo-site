@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/orcamento','ControladorSolicitaOrcamento@create');
+Route::get('/orcamento/visualizar','ControladorSolicitaOrcamento@index');
 Route::post('/orcamento/solicita','ControladorSolicitaOrcamento@store');
