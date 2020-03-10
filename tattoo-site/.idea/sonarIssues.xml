@@ -3,12 +3,22 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/.env">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/.env.example">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/Http/Controllers/ControladorOrcamento.php">
           <value>
             <set />
           </value>
@@ -29,6 +39,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/resources/views/solicitaOrcamento.blade.php">
           <value>
             <set />
           </value>

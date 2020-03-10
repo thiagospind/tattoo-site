@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\SolicitaOrcamento;
+use App\Orcamento;
 use Illuminate\Http\Request;
 
-class ControladorSolicitaOrcamento extends Controller
+class ControladorOrcamento extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ControladorSolicitaOrcamento extends Controller
      */
     public function index()
     {
-        $orcamento = SolicitaOrcamento::all()
+        $orcamento = Orcamento::all()
             ->sortByDesc('created_at');
         return view('visualizaOrcamento',compact('orcamento'));
     }
@@ -49,7 +49,7 @@ class ControladorSolicitaOrcamento extends Controller
             'descricao' => 'required|string'
         ]);
 
-        $orcamento = new SolicitaOrcamento();
+        $orcamento = new Orcamento();
 
         $orcamento->nome = $request->nome;
         $orcamento->telefone = $request->telefone;
@@ -69,48 +69,29 @@ class ControladorSolicitaOrcamento extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+    public function pesquisar(Request $request){
+        $filtro = $request->filtro;
+        $valor = $request->valor;
+        $data_inicio = $request->data_inicio;
+        $data_fim = $request->data_fim;
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+        if($filtro === 'nome' || $filtro === 'telefone' || $filtro === 'email'){
+            $orcamento = Orcamento::where($filtro,'like',$valor.'%');
+        } else if($filtro === 'parte_corpo'){
+            $orcamento = Orcamento::where('parte_corpo','like',$valor.'%')
+                ->orWhere('outra_parte','like',$valor.'%');
+        } else if($filtro === 'descricao'){
+            $orcamento = Orcamento::where($filtro,'like','%'.$valor.'%');
+        }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+        if(isset($data_inicio) && isset($data_fim)){
+            $orcamento = $orcamento->whereBetween('created_at',[$data_inicio,$data_fim]);
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $orcamento = $orcamento->orderBy('created_at','desc')
+            ->get();
+
+        return view('visualizaOrcamento',compact('orcamento'));
+
     }
 }

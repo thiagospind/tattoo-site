@@ -50,7 +50,7 @@
 
                     <div class="form-row">
 
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-sm-4">
                             <label for="parte_corpo">*Parte do Corpo</label>
                             <select class="form-control parte_corpo {{ $errors->has('parte_corpo') ? 'is-invalid' : '' }}"
                                     name="parte_corpo" id="parte_corpo">
@@ -75,7 +75,7 @@
                             @endif
                         </div>
 
-                        <div class="form-group col-md-8">
+                        <div class="form-group col-sm-8">
                             <label for="outra_parte" class="outra_parte" hidden>Outra Parte do Corpo (Especifique)</label>
                             <input type="text" class="form-control outra_parte {{ $errors->has('outra_parte') ? 'is-invalid' : '' }}"
                                    value="{{old('outra_parte')}}" name="outra_parte" id="outra_parte" hidden>

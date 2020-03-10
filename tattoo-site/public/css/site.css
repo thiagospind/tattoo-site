@@ -45,3 +45,9 @@ body{
     max-width: 50%;
     height: auto;
 }
+
+@media print {
+    .container {
+        width: auto;
+    }
+}
