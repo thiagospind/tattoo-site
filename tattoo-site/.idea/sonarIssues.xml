@@ -8,6 +8,56 @@
             <set />
           </value>
         </entry>
+        <entry key="C:/Desenvolvimento/repo/RH/RH/app/Http/Controllers/ControladorLogPonto.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/Desenvolvimento/repo/RH/RH/resources/views/justificaPontoNovo.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/Desenvolvimento/repo/RH/RH/resources/views/listaCargoNivelSalario.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/Desenvolvimento/repo/RH/RH/resources/views/listaCargos.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/Desenvolvimento/repo/RH/RH/resources/views/listaConselhos.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/Desenvolvimento/repo/RH/RH/resources/views/listaNiveis.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/Desenvolvimento/repo/RH/RH/resources/views/listaSalarios.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/Desenvolvimento/repo/RH/RH/resources/views/listaUsuarioSistema.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/Desenvolvimento/repo/RH/RH/resources/views/listaUsuarios.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/Desenvolvimento/repo/RH/RH/resources/views/reajustaSalario.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/.env">
           <value>
             <set />
@@ -24,6 +74,31 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/Http/Controllers/ControladorSolicitaOrcamento.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/Orcamento.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/database/factories/OrcamentoFactory.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/database/seeds/OrcamentoSeeder.php">
           <value>
             <set />
           </value>

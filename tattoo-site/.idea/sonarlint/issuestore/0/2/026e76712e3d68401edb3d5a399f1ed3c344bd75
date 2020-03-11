@@ -1,4 +1,6 @@
 
-l	php:S1192"KDefine a constant instead of duplicating this literal "created_at" 3 times.(âïÌùÿÿÿÿ8Øãö±Œ.
-h	php:S1192,"LDefine a constant instead of duplicating this literal "parte_corpo" 3 times.(ğë­É8©š¿±Œ.
-e	php:S1192,"IDefine a constant instead of duplicating this literal "required" 3 times.(ğë­É8´±í°Œ.
+e	php:S11923"IDefine a constant instead of duplicating this literal "required" 3 times.(ğë­É8û”ÇØŒ.
+d	php:S11927"HDefine a constant instead of duplicating this literal "arquivo" 3 times.(şÆø´8û”ÇØŒ.
+f	php:S1192"KDefine a constant instead of duplicating this literal "created_at" 3 times.(©â×j8û”ÇØŒ.
+h	php:S11923"LDefine a constant instead of duplicating this literal "parte_corpo" 3 times.(ğë­É8û”ÇØŒ.
+h	php:S1192"GDefine a constant instead of duplicating this literal "status" 3 times.(«Ë¦øÿÿÿÿ8û”ÇØŒ.

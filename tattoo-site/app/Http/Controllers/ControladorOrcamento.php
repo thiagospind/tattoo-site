@@ -14,9 +14,16 @@ class ControladorOrcamento extends Controller
      */
     public function index()
     {
-        $orcamento = Orcamento::all()
-            ->sortByDesc('created_at');
-        return view('visualizaOrcamento',compact('orcamento'));
+        $filtro = null;
+        $valor = null;
+        $data_inicio = null;
+        $data_fim = null;
+
+        $orcamento = Orcamento::where('status','=','Novo')
+            ->orderBy('created_at','desc')
+            ->paginate(5);
+
+        return view('visualizaOrcamento',compact('orcamento','filtro','valor','data_inicio','data_fim'));
     }
 
     /**
@@ -46,8 +53,11 @@ class ControladorOrcamento extends Controller
             'tamanho' => 'required',
             'cor' => 'required',
             'arquivo' => 'nullable|image|max:5120',
-            'descricao' => 'required|string'
+            'descricao' => 'required|string',
+            'status' => 'Novo'
         ]);
+
+        $arquivo = $request->file('arquivo');
 
         $orcamento = new Orcamento();
 
@@ -59,8 +69,10 @@ class ControladorOrcamento extends Controller
         $orcamento->outra_parte = $request->outra_parte;
         $orcamento->cor = $request->cor;
         $orcamento->descricao = $request->descricao;
-        $path = $request->file('arquivo')->store('exemplos');
-        $orcamento->imagem_exemplo = $path;
+        if(isset($arquivo)){
+            $path = $request->file('arquivo')->store('exemplos');
+            $orcamento->imagem_exemplo = $path;
+        }
         $orcamento->status = 'Novo';
 
         $orcamento->save();
@@ -69,19 +81,25 @@ class ControladorOrcamento extends Controller
 
     }
 
+    public function update(Request $request){
+        $request->validate([
+            ''
+        ]);
+    }
+
     public function pesquisar(Request $request){
         $filtro = $request->filtro;
         $valor = $request->valor;
         $data_inicio = $request->data_inicio;
         $data_fim = $request->data_fim;
 
-        if($filtro === 'nome' || $filtro === 'telefone' || $filtro === 'email'){
-            $orcamento = Orcamento::where($filtro,'like',$valor.'%');
-        } else if($filtro === 'parte_corpo'){
-            $orcamento = Orcamento::where('parte_corpo','like',$valor.'%')
-                ->orWhere('outra_parte','like',$valor.'%');
-        } else if($filtro === 'descricao'){
+        if($filtro === 'nome' || $filtro === 'telefone' || $filtro === 'email' || $filtro === 'descricao'){
             $orcamento = Orcamento::where($filtro,'like','%'.$valor.'%');
+        } else if($filtro === 'parte_corpo'){
+            $orcamento = Orcamento::where('parte_corpo','like','%'.$valor.'%')
+                ->orWhere('outra_parte','like',$valor.'%');
+        } else if(!isset($filtro)){
+            $orcamento = Orcamento::where('status','=','Novo');
         }
 
         if(isset($data_inicio) && isset($data_fim)){
@@ -89,9 +107,9 @@ class ControladorOrcamento extends Controller
         }
 
         $orcamento = $orcamento->orderBy('created_at','desc')
-            ->get();
+            ->paginate(5);
 
-        return view('visualizaOrcamento',compact('orcamento'));
+        return view('visualizaOrcamento',compact('orcamento','filtro','valor','data_inicio','data_fim'));
 
     }
 }

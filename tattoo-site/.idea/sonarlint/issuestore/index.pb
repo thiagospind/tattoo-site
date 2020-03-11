@@ -11,8 +11,6 @@ U
 %resources/views/layouts/app.blade.php,4\e\4e52e2a63befd1dc69600001e78b80ebece1ac9b
 [
 +resources/views/solicitaOrcamento.blade.php,5\0\50b208a25a39b61422331a27480964c3bc24865a
-e
-5app/Http/Controllers/ControladorSolicitaOrcamento.php,8\4\84d1879eaa9f71c5e4b63dca3c97ae44a67190ca
 A
 public/js/site.js,a\d\ade13de8d14c128e6852b01cc2b834800078f39f
 C
@@ -23,3 +21,15 @@ S
 #app/Http/Controllers/Controller.php,2\e\2ed23e1749f02eb8e561f0a531d07863e7cf9fb9
 ]
 -app/Http/Controllers/ControladorOrcamento.php,0\2\026e76712e3d68401edb3d5a399f1ed3c344bd75
+A
+app/Orcamento.php,4\c\4cc8af8fca2818d1b4cbe07e39a6913a7a3951bb
+T
+$app/Providers/AppServiceProvider.php,4\8\48b8d8112e9bdd32ee7e25b1224d6739eece1e72
+R
+"database/factories/UserFactory.php,3\4\3401747fc769758d97931473eab6222bc2abf009
+Q
+!database/seeds/DatabaseSeeder.php,1\b\1bfb05dc7f9d1708ffc561e370a53ad2df3db646
+W
+'database/factories/OrcamentoFactory.php,5\4\54fa18ee36d59d33ab5db6032c3879ca42291570
+R
+"database/seeds/OrcamentoSeeder.php,a\6\a6a8b2685e175f60bcdb3d3d879018b69e73473e

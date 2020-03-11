@@ -7,7 +7,7 @@
                 <h2>Solicitação de Orçamentos</h2>
             </div>
             <div class="card-body">
-                <form action="/orcamento/solicita" method="post" enctype="multipart/form-data">
+                <form action="/orcamento" method="post" enctype="multipart/form-data" id="formulario">
                     @csrf
 
 {{--                    @if ($errors->any())--}}
@@ -66,6 +66,7 @@
                                 <option value="Pé" {{old('parte_corpo') === 'Pé' ? 'selected' : ''}}>Pé</option>
                                 <option value="Peito" {{old('parte_corpo') === 'Peito' ? 'selected' : ''}}>Peito</option>
                                 <option value="Perna" {{old('parte_corpo') === 'Perna' ? 'selected' : ''}}>Perna</option>
+                                <option value="Perna" {{old('parte_corpo') === 'Panturrilha' ? 'selected' : ''}}>Panturrilha</option>
                                 <option value="Pulso" {{old('parte_corpo') === 'Pulso' ? 'selected' : ''}}>Pulso</option>
                                 <option value="Tornozelo" {{old('parte_corpo') === 'Tornozelo' ? 'selected' : ''}}>Tornozelo</option>
                                 <option value="Outra" {{old('parte_corpo') === 'Outra' ? 'selected' : ''}}>Outra (especifique ao lado)</option>
