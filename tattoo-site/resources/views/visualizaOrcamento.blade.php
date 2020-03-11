@@ -19,7 +19,7 @@
                 <form action="/orcamento/pesquisar" method="post">
                     @csrf
                     <div class="input-group mb-3">
-                        <select class="form-control col-sm-12 col-md-6 col-lg-3 btn-outline-info" name="filtro" >
+                        <select class="form-control col-sm-8 col-md-6 col-lg-3 btn-outline-info" name="filtro" >
                             <option disabled selected style="display: none;" value="">Filtros</option>
                             <option value="nome">Nome</option>
                             <option value="telefone">Telefone</option>
@@ -32,11 +32,11 @@
                     <div class="form-row">
                         <div class="form-group col-sm-12 col-md-6 col-lg-6">
                             <label for="data_inicio">Data Inicial</label>
-                            <input type="date" name="data_inicio" id="data_inicio">
+                            <input class="form-control" type="date" name="data_inicio" id="data_inicio">
                         </div>
                         <div class="form-group col-sm-12 col-md-6 col-lg-6">
                             <label for="data_fim">Data Final</label>
-                            <input type="date" name="data_fim" id="data_fim">
+                            <input class="form-control" type="date" name="data_fim" id="data_fim">
                         </div>
                     </div>
                     <button class="btn btn-outline-info mt-2" type="submit">Pesquisar</button>
@@ -44,7 +44,7 @@
                 @if(count($orcamento) > 0 )
                     @foreach($orcamento as $orc)
                         <form action="/orcamento/salvar" method="post">
-                            <div id="accordion">
+                            <div id="accordion" class="mt-2">
                                 {{--<div class="card-visualiza-orcamento border rounded" id="heading{{$orc->id}}">--}}
                                 <div class="card">
                                     <div class="card-header" id="heading{{$orc->id}}">
