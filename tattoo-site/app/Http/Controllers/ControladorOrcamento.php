@@ -83,8 +83,24 @@ class ControladorOrcamento extends Controller
 
     public function update(Request $request){
         $request->validate([
-            ''
+            'valor' => 'required|numeric',
+            'observacao' => 'nullable|max:255'
         ]);
+
+        $id = $request->id;
+        $valor = $request->valor;
+        $observacao = $request->observacao;
+
+        $orcamento = Orcamento::find($id);
+        if(isset($orcamento)){
+            $orcamento->valor = $valor;
+            $orcamento->observacao = $observacao;
+            $orcamento->save();
+
+            return $this->pesquisar($request);
+        } else {
+            return redirect()->back()->with('msg','Orçamento não encontrado!');
+        }
     }
 
     public function pesquisar(Request $request){

@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark ">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark ">
     <a class="navbar-brand" href="#">
         <img src="{!! asset('/img/logo.png') !!}" width="30" height="30" alt="">
         May Pinheiro Tattoo

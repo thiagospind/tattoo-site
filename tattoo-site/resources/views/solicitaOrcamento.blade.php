@@ -1,29 +1,18 @@
 @extends('layouts.app')
 @section('title','Solicitação de Orçamentos')
 @section('body')
-    <div class="container mt-5 pt-5">
-        <div class="card card-orcamento mt-3 pt-3">
+    <div class="container container-sol-orcamento mt-5 pt-5">
+{{--        <div class="card card-orcamento mt-3 pt-3">--}}
             <div class="py-3 text-center">
                 <h2>Solicitação de Orçamentos</h2>
             </div>
-            <div class="card-body">
+{{--            <div class="card-body">--}}
                 <form action="/orcamento" method="post" enctype="multipart/form-data" id="formulario">
                     @csrf
 
-{{--                    @if ($errors->any())--}}
-{{--                        <div class="alert alert-danger">--}}
-{{--                            <ul>--}}
-{{--                                @foreach ($errors->all() as $error)--}}
-{{--                                    <li>{{ $error }}</li>--}}
-{{--                                @endforeach--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    @endif--}}
-
-{{--                    <div class="form-row">--}}
                     <div class="form-group">
                         <label for="nome">*Nome Completo</label>
-                        <input type="text" class="form-control {{ $errors->has('nome') ? 'is-invalid' : '' }}"
+                        <input type="text" class="form-control {{ $errors->has('nome') ? 'is-invalid' : '' }} bg-transparent"
                                name="nome" id="nome" value="{{ old('nome') }}">
                         @if($errors->has('nome'))
                             <div class=" {{$errors->has('nome') ? 'invalid-feedback' : ''}}">{{$errors->first('nome')}}</div>
@@ -32,7 +21,7 @@
 
                     <div class="form-group">
                         <label for="telefone">*Telefone (WhatsApp)</label>
-                        <input type="text" class="form-control telefone {{ $errors->has('telefone') ? 'is-invalid' : '' }}"
+                        <input type="text" class="form-control telefone {{ $errors->has('telefone') ? 'is-invalid' : '' }} bg-transparent"
                                name="telefone" id="telefone" value="{{ old('telefone') }}">
                         @if($errors->has('telefone'))
                             <div class=" {{$errors->has('telefone') ? 'invalid-feedback' : ''}}">{{$errors->first('telefone')}}</div>
@@ -41,7 +30,7 @@
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
+                        <input type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }} bg-transparent"
                                name="email" id="email" value="{{ old('email') }}">
                         @if($errors->has('email'))
                             <div class="{{ $errors->has('email') ? 'invalid-feedback' : ''}}">{{$errors->first('email')}}</div>
@@ -52,7 +41,7 @@
 
                         <div class="form-group col-sm-4">
                             <label for="parte_corpo">*Parte do Corpo</label>
-                            <select class="form-control parte_corpo {{ $errors->has('parte_corpo') ? 'is-invalid' : '' }}"
+                            <select class="form-control parte_corpo {{ $errors->has('parte_corpo') ? 'is-invalid' : '' }} bg-transparent"
                                     name="parte_corpo" id="parte_corpo">
                                 <option value="">Selecione...</option>
                                 <option value="Antebraço" {{old('parte_corpo') === 'Antebraço' ? 'selected' : ''}}>Antebraço</option>
@@ -78,7 +67,7 @@
 
                         <div class="form-group col-sm-8">
                             <label for="outra_parte" class="outra_parte" hidden>Outra Parte do Corpo (Especifique)</label>
-                            <input type="text" class="form-control outra_parte {{ $errors->has('outra_parte') ? 'is-invalid' : '' }}"
+                            <input type="text" class="form-control outra_parte {{ $errors->has('outra_parte') ? 'is-invalid' : '' }} bg-transparent"
                                    value="{{old('outra_parte')}}" name="outra_parte" id="outra_parte" hidden>
                             @if($errors->has('outra_parte'))
                                 <div class=" {{$errors->has('outra_parte') ? 'invalid-feedback' : ''}}">{{$errors->first('outra_parte')}}</div>
@@ -88,7 +77,7 @@
 
                     <div class="form-group">
                         <label for="tamanho">*Tamanho da Tatuagem</label>
-                        <input type="text" class="form-control {{ $errors->has('tamanho') ? 'is-invalid' : '' }}"
+                        <input type="text" class="form-control {{ $errors->has('tamanho') ? 'is-invalid' : '' }} bg-transparent"
                                name="tamanho" id="tamanho" value="{{ old('tamanho') }}" aria-describedby="descricaoTamanho"
                                placeholder="Exemplo: 7x4cm">
                         <small id="descricaoTamanho" class="form-text text-muted">
@@ -106,7 +95,7 @@
                                 @if($errors->has('cor'))
                                     <div class=" {{$errors->has('cor') ? 'invalid-feedback' : ''}}">{{$errors->first('cor')}}</div>
                                 @endif
-                                <input class="form-check-input {{ $errors->has('cor') ? 'is-invalid' : '' }}"
+                                <input class="form-check-input {{ $errors->has('cor') ? 'is-invalid' : '' }} bg-transparent"
                                        type="radio" name="cor" id="pb"
                                        value="pb" {{old('cor') === 'pb' ? 'checked' : ''}}>
                                 <label class="form-check-label" for="pb">Preto e Branco</label>
@@ -123,13 +112,13 @@
                     <div class="form-group">
                         <div class="form-group">
                             <label for="arquivo">Selecione uma imagem de referência (Tamanho máximo de 5mb).</label>
-                            <input type="file" class="form-control-file" id="arquivo" name="arquivo">
+                            <input type="file" class="form-control-file bg-transparent" id="arquivo" name="arquivo">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="descricao">*Forneça uma descrição sobre como deseja fazer a tatuagem.</label>
-                        <textarea class="form-control {{ $errors->has('descricao') ? 'is-invalid' : '' }}"
+                        <textarea class="form-control {{ $errors->has('descricao') ? 'is-invalid' : '' }} bg-transparent"
                                   id="descricao" name="descricao" rows="3"
                                   aria-describedby="descricao">{{old('descricao')}}</textarea>
                         <small id="descricao" class="form-text text-muted ">
@@ -142,9 +131,7 @@
 
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
-
             </div>
-        </div>
-
-    </div>
+{{--        </div>--}}
+{{--    </div>--}}
 @endsection

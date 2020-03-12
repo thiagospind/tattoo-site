@@ -1,8 +1,9 @@
 body{
     /*font-family: 'Bitter', serif;*/
     font-family: 'Ubuntu', sans-serif;
-    background: rgba(0, 0, 0, 0.9);
+    /*background: rgba(0, 0, 0, 0.9);*/
     /*color: rgba(34,66,179,0.9);*/
+    background: rgb(73,81,117);
 }
 
 .bg-dark {
@@ -16,11 +17,25 @@ body{
 
 .bg-card-orcamento-interno{
     /*background-color: rgba(255, 240, 143, 0.7)*/
-    background-color: #424B54;
+    /*background-color: #424B54;*/
+    background-color: rgb(73,81,117);
+    color: #fff !important;
 }
 
-.bg-card-orcamento-interno input{
-    color: white;
+.bg-card-orcamento-interno input {
+    color: #fff !important;
+}
+
+.bg-card-orcamento-interno textarea {
+    color: #fff !important;
+}
+
+.container-sol-orcamento {
+    color: #fff !important;
+}
+
+.container-sol-orcamento input{
+    color: #fff !important;
 }
 
 .card-orcamento{
