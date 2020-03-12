@@ -33,3 +33,13 @@ W
 'database/factories/OrcamentoFactory.php,5\4\54fa18ee36d59d33ab5db6032c3879ca42291570
 R
 "database/seeds/OrcamentoSeeder.php,a\6\a6a8b2685e175f60bcdb3d3d879018b69e73473e
+>
+config/app.php,7\3\734f7be25e8008acc7129e73cd116d5de913e6fd
+V
+&app/Providers/EventServiceProvider.php,6\d\6d80af2c8eccc15fa62a616067d4270df372f87d
+C
+config/services.php,6\7\67cde7ebf0c82e44eedc43a9b83d4fa13c684078
+R
+"resources/views/redirect.blade.php,b\c\bca74c11d91ddc37ae9dac6bf53bef7ee4dd50b7
+B
+public/css/app.css,a\e\aed169877220cb60c39687eb7ae1de7d4fb7946f

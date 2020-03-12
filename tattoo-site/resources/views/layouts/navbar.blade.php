@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark ">
     <a class="navbar-brand" href="#">
-        <img src="{!! asset('/img/logo.png') !!}" width="30" height="30" alt="">
+        <img src="{!! asset('/img/logo_nova.png') !!}" width="auto" height="40" alt="">
         May Pinheiro Tattoo
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
